@@ -1,0 +1,14 @@
+= Reggie B. -- A Hex/RGB Color Converter
+
+== Description
+
+Reggie B. is a utility for converting colors between rgb and hex format.  It was created
+to support http://www.2rgb.com.
+
+== Examples
+
+  ReggieB.convert "rgb(255, 255, 255)"  =>  "0xffffff"
+  ReggieB.convert "255, 255, 255"       =>  "0xffffff"
+  ReggieB.convert "0xffffff"            =>  [255, 255, 255]
+  ReggieB.convert "#ffffff"             =>  [255, 255, 255]
+  ReggieB.convert "#fff"                =>  [255, 255, 255]
