@@ -9,7 +9,8 @@ Gem::Specification.new do |s|
     It is very forgiving in the syntax it allows.
   }
   s.require_path  = "lib"
-  s.files         = FileList["lib/**/*.rb", "[A-Z]*", "test/**/*"].to_a
+  s.files         = ["lib/reggieb.rb", "LICENSE", "Rakefile", "README",
+                     "test/reggieb_test.rb", "test/test_helper.rb"]
   s.homepage      = "http://github.com/techiferous/reggieb"
   s.requirements  << "none"
   s.has_rdoc      = true
