@@ -175,4 +175,14 @@ class ReggieBTest < Test::Unit::TestCase
     assert_equal "0xa01100", ReggieB.convert("rgb(160, 17, 0);")
   end
 
+  def test_rgb_percentages
+    assert_equal "0xffffff", ReggieB.convert("rgb(100%, 100%, 100%)")
+    assert_equal "0xff7f7f", ReggieB.convert("rgb(100%, 50%, 50%)")
+    assert_equal "0x000000", ReggieB.convert("rgb(0%, 0%, 0%)")
+    assert_equal "0xffffff", ReggieB.convert("rgb(100%, 100%, 100%);")
+    assert_equal "0x7fff7f", ReggieB.convert("50% 100% 50%")
+    assert_equal "0x7fff7f", ReggieB.convert("    50%      100%     50%   ")
+    assert_equal "0x7fff7f", ReggieB.convert("50%100%50%")
+  end
+
 end

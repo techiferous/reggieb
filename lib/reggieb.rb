@@ -37,6 +37,10 @@ class ReggieB
       s = $2 + $2 + $3 + $3 + $4 + $4
       return to_rgb(s)
     end
+    if s =~ /^\D*(\d{1,3})%\D*(\d{1,3})%\D*(\d{1,3})%\D*$/
+      percent_to_byte = 255.0 / 100.0
+      return to_hex($1.to_i*percent_to_byte, $2.to_i*percent_to_byte, $3.to_i*percent_to_byte)
+    end
     if s =~ /^\D*(\d{1,3})\D+(\d{1,3})\D+(\d{1,3})\D*$/
       return to_hex($1.to_i, $2.to_i, $3.to_i)
     end
@@ -47,6 +51,9 @@ class ReggieB
   # is a string formatted like "0xdddddd" where d represents a hex digit.
   #
   def self.to_hex(r, g, b)
+    r = r.round
+    g = g.round
+    b = b.round
     unless (0..255).include?(r) && (0..255).include?(g) && (0..255).include?(b)
       message = "RGB values should be between 0 and 255.  Received #{r}, #{g}, #{b}."
       raise ArgumentError.new(message)
