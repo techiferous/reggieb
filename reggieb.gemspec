@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = "reggieb"
-  s.version       = "0.0.1"
+  s.version       = "0.1.0"
   s.author        = "Wyatt Greene"
   s.email         = "techiferous@gmail.com"
   s.summary       = "A Hex/RGB color converter."
@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   }
   s.require_path  = "lib"
   s.files         = ["lib/reggieb.rb", "LICENSE", "Rakefile", "README",
+                     "CHANGELOG",
                      "test/reggieb_test.rb", "test/test_helper.rb"]
   s.homepage      = "http://github.com/techiferous/reggieb"
   s.requirements  << "none"

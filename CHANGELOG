@@ -1,0 +1,6 @@
+0.1.0 (October 2, 2009)
+* Added ability to accept rgb colors specified as percentages:
+  rgb(50%, 34%, 12%)
+
+0.0.1 (September 27, 2009)
+* Initial release.
